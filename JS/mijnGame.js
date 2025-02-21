@@ -2,11 +2,11 @@ var data;
 var ringen = [];
 
 function preload() {
-    achtergrondmuziek = loadSound("sounds/Bauxiet-Suriname1998.mp3");
-    // bron: https://www.bensound.com/royalty-free-music/track/dance
+    achtergrondmuziek = loadSound("sounds/");
+
     
-    raak = loadSound("sounds/score.wav");
-    data = loadJSON('assets/data.json');
+    raak = loadSound("sounds/");
+    data = loadJSON('assets/');
 }
 
 function setup() {
