@@ -3,7 +3,7 @@ var ringen = [];
 
 function preload() {
     achtergrondmuziek = loadSound("sounds/");
-
+    achtergrond = loadImage("assets/basicarenabackground.jpg");
     
     raak = loadSound("sounds/");
     data = loadJSON('assets/data.json');
@@ -44,7 +44,7 @@ function draw() {
         b1.beweeg();
     }
     else {
-        background(255);
+        background();
         text('Pas de grootte van je browserscherm aan zodat de bal zo vaak mogelijk het doel in het midden raakt.\n\nDruk ENTER om te starten.',canvas.width / 4,canvas.height / 4,canvas.width / 2,canvas.height / 2);
     }
 }
@@ -63,7 +63,7 @@ function dataNaarArray() {
 
 function maakAchtergrond() {
     push();
-    background(255,0,200);
+    background(achtergrondmuziek);
     for (var i = 0; i < ringen.length; i++) {
         ringen[i].teken();
     }
