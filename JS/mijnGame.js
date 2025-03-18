@@ -6,7 +6,7 @@ function preload() {
 
     
     raak = loadSound("sounds/");
-    data = loadJSON('assets/');
+    data = loadJSON('assets/data.json');
 }
 
 function setup() {
