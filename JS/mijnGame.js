@@ -45,7 +45,7 @@ function draw() {
     }
     else {
         background();
-        text('Pas de grootte van je browserscherm aan zodat de bal zo vaak mogelijk het doel in het midden raakt.\n\nDruk ENTER om te starten.',canvas.width / 4,canvas.height / 4,canvas.width / 2,canvas.height / 2);
+        text('Pas de aap van je browserscherm aan zodat de bal zo vaak mogelijk het doel in het linkerhoek raakt.\n\nDruk ENTER om te starten.',canvas.width / 4,canvas.height / 4,canvas.width / 2,canvas.height / 2);
     }
 }
 
