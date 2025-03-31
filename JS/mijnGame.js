@@ -82,7 +82,7 @@ function keyPressed() {
   if (keyCode == ENTER) {
     if (!b1.actief) {
         b1.actief = true;
-        Muziek.play();
+        muziek.play();
     }
   }
 }
