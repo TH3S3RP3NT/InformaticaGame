@@ -2,12 +2,12 @@ var muziek = [];
 var currentTrackIndex = 0;
 var musicData;
 function preload() {
-    musicData = loadJSON("../assets/json/music.json", () => {
+    musicData = loadJSON("/public/assets/json/music.json", () => {
         for (var i = 0; i < musicData.Muziek.length; i++) {
-            muziek.push(loadSound('../assets/music/' + musicData.Muziek[i].filename));
+            muziek.push(loadSound('/public/assets/music/' + musicData.Muziek[i].filename));
         }
     });
-    achtergrond = loadImage("../assets/img/basicarenabackground.jpg");
+    achtergrond = loadImage("/public/assets/img/basicarenabackground.jpg");
 }
 
 function setup() {
