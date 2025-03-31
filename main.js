@@ -1,11 +1,13 @@
 var muziek = [];
 var currentTrackIndex = 0;
+var muziekData;
 function preload() {
-    var musicData = loadJSON("assets/music.json");
+    musicData = loadJSON("assets/music.json", () => {
+        for (var i = 0; i < musicData.Muziek.length; i++) {
+            muziek.push(loadSound('assets/music/' + musicData.Muziek[i].filename));
+        }
+    });
     achtergrond = loadImage("assets/basicarenabackground.jpg");
-    for (var i = 0; i < musicData.Muziek.length; i++) {
-        muziek.push(loadSound('assets/music/' + musicData.Muziek[i].filename));
-    }
 }
 
 function setup() {
@@ -13,8 +15,6 @@ function setup() {
     textFont("Monospace");
     textSize(40);
     textAlign(CENTER, CENTER);
-    b1 = new Bal();
-    d1 = new Doel();
     muziek[currentTrackIndex].play();
     muziek[currentTrackIndex].onended(playNextTrack);
 }
