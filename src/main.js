@@ -1,9 +1,11 @@
-var muziek = [];
-var currentTrackIndex = 0;
-var musicData;
+let mgr;
+let muziek = [];
+let currentTrackIndex = 0;
+let musicData;
+
 function preload() {
     musicData = loadJSON("/InformaticaGame/public/assets/json/music.json", () => {
-        for (var i = 0; i < musicData.Muziek.length; i++) {
+        for (let i = 0; i < musicData.Muziek.length; i++) {
             muziek.push(loadSound('/InformaticaGame/public/assets/music/' + musicData.Muziek[i].filename));
         }
     });
@@ -12,30 +14,26 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    textFont("Monospace");
-    textSize(40);
-    textAlign(CENTER, CENTER);
+    mgr = new SceneManager();
+    mgr.wire()
+    mgr.showScene(titlescreen);
     muziek[currentTrackIndex].play();
     muziek[currentTrackIndex].onended(playNextTrack);
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-    }
+}
 
 function draw() {
-    background(achtergrond);
-    text('Stickman Fight!', 0, 0, canvas.width, canvas.height / 2);
-    textAlign(RIGHT, BOTTOM);
-    textSize(20);
-
+    mgr.draw();
 }
 
 function keyPressed() {
-    if (keyCode == ENTER) {
-            muziek[currentTrackIndex].play();
+    if (keyCode === ENTER) {
+        muziek[currentTrackIndex].play();
     }
-    if (keyCode == 78) {
+    if (keyCode === 78) {
         playNextTrack()
     }
 }
