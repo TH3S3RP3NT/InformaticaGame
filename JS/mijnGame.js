@@ -5,7 +5,7 @@ function preload() {
     muziek = loadJSON("assets/music.json");
     achtergrond = loadImage("assets/basicarenabackground.jpg");
     
-    raak = loadSound("sounds/");
+    raak = loadSound("assets/music/Ghostwriter - RJD2.mp3");
     data = loadJSON('assets/data.json');
 
 }
