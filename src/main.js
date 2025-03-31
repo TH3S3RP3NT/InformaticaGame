@@ -10,13 +10,14 @@ function preload() {
         }
     });
     achtergrond = loadImage("/InformaticaGame/public/assets/img/basicarenabackground.jpg");
+    font = loadFont('/InformaticaGame/public/assets/fonts/Marianne.otf');
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     mgr = new SceneManager();
     mgr.wire()
-    mgr.showScene(titlescreen);
+    mgr.showScene(Titlescreen);
     muziek[currentTrackIndex].play();
     muziek[currentTrackIndex].onended(playNextTrack);
 }
