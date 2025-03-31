@@ -2,9 +2,12 @@
   "Muziek": [
     {
       "name": "Ghostwriter",
-      "filename": "Ghostwriter - RJD2.mp3",
-      "length": "317"
+      "filename": "Ghostwriter - RJD2.mp3"
 
+    },
+    {
+      "name": "Reservoir Dogs",
+        "filename": "Reservoir Dogs - Bliss n Eso.mp3"
     }
   ]
 }
