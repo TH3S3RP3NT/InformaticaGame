@@ -34,9 +34,6 @@ function keyPressed() {
     if (keyCode === ENTER) {
         muziek[currentTrackIndex].play();
     }
-    if (keyCode === 78) {
-        playNextTrack()
-    }
 }
 
 function playNextTrack() {

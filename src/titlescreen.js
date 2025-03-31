@@ -10,7 +10,9 @@ function Titlescreen() {
         fill(0);
         text("Welkom bij Stickman Fight!", width / 2, height / 2);
         text("Druk op ENTER om te beginnen", width / 2, height / 2 + 50);
-        if (keyPressed() && keyCode === ENTER) {
+    }
+    this.keyPressed = function() {
+        if (keyCode === ENTER) {
             text("Voer je naam in:", width / 2, height / 2 + 100);
             let Name = createInput();
             storeItem('name', Name.value());
