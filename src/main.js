@@ -25,7 +25,7 @@ function windowResized() {
 
 function draw() {
     background(achtergrond);
-    text('Pas de grootte van je browserscherm aan zodat de bal zo vaak mogelijk het doel in het midden raakt.', 0, 0, canvas.width, canvas.height / 2);
+    text('Stickman Fight!', 0, 0, canvas.width, canvas.height / 2);
     textAlign(RIGHT, BOTTOM);
     textSize(20);
 
@@ -41,9 +41,16 @@ function keyPressed() {
 }
 
 function playNextTrack() {
-    currentTrackIndex++;
-    if (currentTrackIndex >= muziek.length) {
-        currentTrackIndex = 0; // Loop back to the first track
+    if (muziek[currentTrackIndex]) {
+        muziek[currentTrackIndex].stop();
     }
+
+
+    currentTrackIndex++;
+
+    if (currentTrackIndex >= muziek.length) {
+        currentTrackIndex = 0;
+    }
+
     muziek[currentTrackIndex].play();
 }
