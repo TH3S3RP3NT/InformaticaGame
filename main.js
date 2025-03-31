@@ -19,6 +19,10 @@ function setup() {
     muziek[currentTrackIndex].onended(playNextTrack);
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    }
+
 function draw() {
     background(achtergrond);
     text('Pas de grootte van je browserscherm aan zodat de bal zo vaak mogelijk het doel in het midden raakt.', 0, 0, canvas.width, canvas.height / 2);
@@ -34,7 +38,9 @@ function keyPressed() {
 }
 
 function playNextTrack() {
-    currentTrackIndex = (currentTrackIndex + 1) % muziek.length;
+    currentTrackIndex++;
+    if (currentTrackIndex >= muziek.length) {
+        currentTrackIndex = 0; // Loop back to the first track
+    }
     muziek[currentTrackIndex].play();
-    muziek[currentTrackIndex].onended(playNextTrack);
 }
