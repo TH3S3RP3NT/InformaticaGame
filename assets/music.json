@@ -2,7 +2,9 @@
   "Muziek": [
     {
       "name": "Ghostwriter",
-      "filename": "Ghostwriter - RJD2.mp3"
+      "filename": "Ghostwriter - RJD2.mp3",
+      "length": "317"
+
     }
   ]
 }
