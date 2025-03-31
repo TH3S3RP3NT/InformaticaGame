@@ -1,6 +1,6 @@
 var muziek = [];
 var currentTrackIndex = 0;
-var muziekData;
+var musicData;
 function preload() {
     musicData = loadJSON("assets/music.json", () => {
         for (var i = 0; i < musicData.Muziek.length; i++) {
