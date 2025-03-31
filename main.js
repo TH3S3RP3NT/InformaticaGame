@@ -27,6 +27,12 @@ function draw() {
 
 }
 
+function keyPressed() {
+    if (keyCode == ENTER) {
+
+    }
+}
+
 function playNextTrack() {
     currentTrackIndex = (currentTrackIndex + 1) % muziek.length;
     muziek[currentTrackIndex].play();
