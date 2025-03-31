@@ -1,6 +1,8 @@
 var data;
 var ringen = [];
-var muziek;
+var Muziek = for (var i = 0; i < muziek.length; i++) {
+    muziek[i] = loadSound('assets/music' + muziek[i].filename); // + load silence + loadSecondSound
+}}
 function preload() {
     muziek = loadJSON("assets/music.json");
     achtergrond = loadImage("assets/basicarenabackground.jpg");
@@ -18,9 +20,8 @@ function setup() {
     textAlign(CENTER,CENTER);
     b1 = new Bal();
     d1 = new Doel();
-    for (var i = 0; i < muziek.length; i++) {
-        muziek[i] = loadSound('assets/music' + muziek[i].filename); // + load silence + loadSecondSound
-    }}
+
+
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
@@ -82,7 +83,7 @@ function keyPressed() {
   if (keyCode == ENTER) {
     if (!b1.actief) {
         b1.actief = true;
-        muziek.play();
+        Muziek.play();
     }
   }
 }
