@@ -1,6 +1,6 @@
 var data;
 var ringen = [];
-
+var muziek;
 function preload() {
     muziek = loadJSON("assets/music.json");
     achtergrond = loadImage("assets/basicarenabackground.jpg");
@@ -18,7 +18,9 @@ function setup() {
     textAlign(CENTER,CENTER);
     b1 = new Bal();
     d1 = new Doel();
-}
+    for (var i = 0; i < muziek.length; i++) {
+        muziek[i] = loadSound('assets/music' + muziek[i].filename); // + load silence + loadSecondSound
+    }}
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
@@ -31,11 +33,7 @@ function draw() {
     maakAchtergrond();
     d1.teken();
     b1.teken();
-    var Muziek = muziek['Muziek'];
-    for (var i = 0; i < Muziek.length; i++) {
-        Muziek[i] = loadSound('assets/music' + Muziek[i].filename); // + load silence + loadSecondSound
-    }
-    Muziek.play()
+
     if (d1.raakt(b1)) {
         if (!d1.wordtGeraakt) {
             d1.geraakt++;
@@ -69,7 +67,7 @@ function dataNaarArray() {
 
 function maakAchtergrond() {
     push();
-    background(achtergrondmuziek);
+    background(achtergrond);
     for (var i = 0; i < ringen.length; i++) {
         ringen[i].teken();
     }
@@ -84,7 +82,7 @@ function keyPressed() {
   if (keyCode == ENTER) {
     if (!b1.actief) {
         b1.actief = true;
-        achtergrondmuziek.loop();
+        Muziek.play();
     }
   }
 }
