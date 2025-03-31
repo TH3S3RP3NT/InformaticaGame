@@ -29,7 +29,7 @@ function draw() {
 
 function keyPressed() {
     if (keyCode == ENTER) {
-
+            muziek[currentTrackIndex].play();
     }
 }
 
