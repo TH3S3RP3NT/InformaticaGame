@@ -2,11 +2,12 @@ var data;
 var ringen = [];
 
 function preload() {
-    achtergrondmuziek = loadSound("sounds/");
+    muziek = loadJSON("assets/music.json");
     achtergrond = loadImage("assets/basicarenabackground.jpg");
     
     raak = loadSound("sounds/");
     data = loadJSON('assets/data.json');
+
 }
 
 function setup() {
@@ -30,6 +31,11 @@ function draw() {
     maakAchtergrond();
     d1.teken();
     b1.teken();
+    var Muziek = muziek['Muziek'];
+    for (var i = 0; i < Muziek.length; i++) {
+        Muziek[i] = loadSound('assets/music' + Muziek[i].filename); // + load silence + loadSecondSound
+    }
+    Muziek.play()
     if (d1.raakt(b1)) {
         if (!d1.wordtGeraakt) {
             d1.geraakt++;

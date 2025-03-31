@@ -1,86 +1,88 @@
-[
-  {
-    "name": "1bsn",
-    "filename": "dn_bsn*.wav"
-  },
-  {
-    "name": "2can",
-    "filename": "dn_can*.wav"
-  },
-  {
-    "name": "3cnt",
-    "filename": "dn_cnt*.wav"
-  },
-  {
-    "name": "4gtn",
-    "filename": "dn_gtn*.wav"
-  },
-  {
-    "name": "5gtr",
-    "filename": "dn_gtr*.wav"
-  },
-  {
-    "name": "6hcd",
-    "filename": "dn_hcd*.wav"
-  },
-  {
-    "name": "7hrn",
-    "filename": "dn_hrn*.wav"
-  },
-  {
-    "name": "8hrp",
-    "filename": "dn_hrp*.wav"
-  },
-  {
-    "name": "9obc",
-    "filename": "dn_obc*.wav"
-  },
-  {
-    "name": "10obo",
-    "filename": "dn_obo.wav"
-  },
-  {
-    "name": "11ols",
-    "filename": "dn_ols*.wav"
-  },
-  {
-    "name": "12pno",
-    "filename": "dn_pno*.wav"
-  },
-  {
-    "name": "13pob",
-    "filename": "dn_pob.wav"
-  },
-  {
-    "name": "14sno",
-    "filename": "dn_sno*.wav"
-  },
-  {
-    "name": "15spo",
-    "filename": "dn_spo.wav"
-  },
-  {
-    "name": "16stg",
-    "filename": "dn_stg*.wav"
-  },
-  {
-    "name": "17tbn",
-    "filename": "dn_tbn*.wav"
-  },
-  {
-    "name": "18tpr",
-    "filename": "dn_tpr*.wav"
-  },
-  {
-    "name": "19tpt",
-    "filename": "dn_tpt*.wav"
-  },
-  {
-    "name": "20vbn",
-    "filename": "dn_vbn*.wav"
-  },
-  {
-    "name": "21vbs",
-    "filename": "dn_vbs*.wav"
-  }
-]
+{
+  "Muziek": [
+    {
+      "name": "1bsn",
+      "filename": "dn_bsn*.wav"
+    },
+    {
+      "name": "2can",
+      "filename": "dn_can*.wav"
+    },
+    {
+      "name": "3cnt",
+      "filename": "dn_cnt*.wav"
+    },
+    {
+      "name": "4gtn",
+      "filename": "dn_gtn*.wav"
+    },
+    {
+      "name": "5gtr",
+      "filename": "dn_gtr*.wav"
+    },
+    {
+      "name": "6hcd",
+      "filename": "dn_hcd*.wav"
+    },
+    {
+      "name": "7hrn",
+      "filename": "dn_hrn*.wav"
+    },
+    {
+      "name": "8hrp",
+      "filename": "dn_hrp*.wav"
+    },
+    {
+      "name": "9obc",
+      "filename": "dn_obc*.wav"
+    },
+    {
+      "name": "10obo",
+      "filename": "dn_obo.wav"
+    },
+    {
+      "name": "11ols",
+      "filename": "dn_ols*.wav"
+    },
+    {
+      "name": "12pno",
+      "filename": "dn_pno*.wav"
+    },
+    {
+      "name": "13pob",
+      "filename": "dn_pob.wav"
+    },
+    {
+      "name": "14sno",
+      "filename": "dn_sno*.wav"
+    },
+    {
+      "name": "15spo",
+      "filename": "dn_spo.wav"
+    },
+    {
+      "name": "16stg",
+      "filename": "dn_stg*.wav"
+    },
+    {
+      "name": "17tbn",
+      "filename": "dn_tbn*.wav"
+    },
+    {
+      "name": "18tpr",
+      "filename": "dn_tpr*.wav"
+    },
+    {
+      "name": "19tpt",
+      "filename": "dn_tpt*.wav"
+    },
+    {
+      "name": "20vbn",
+      "filename": "dn_vbn*.wav"
+    },
+    {
+      "name": "21vbs",
+      "filename": "dn_vbs*.wav"
+    }
+  ]
+}
