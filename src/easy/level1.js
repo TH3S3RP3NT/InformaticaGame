@@ -18,10 +18,5 @@ function EasyLevel1() {
     this.level = function() {
         // Hier komt de logica voor Easy Level 1
         fill(0);
-        text("Dit is Easy Level 1", width / 2, height / 2 + 100);
-        text("Druk op N om naar het volgende level te gaan", width / 2, height / 2 + 150);
-        if (keyPressed() && keyCode === 78) {
-            this.sceneManager.showScene(EasyLevel2);
-        }
     }
 }
