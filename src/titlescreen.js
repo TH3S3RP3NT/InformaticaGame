@@ -32,6 +32,7 @@ function Titlescreen() {
             let Hard = createButton('Hard');
             Easy.position(width / 2 - 50, height / 2 + 150);
             Hard.position(width / 2 + 50, height / 2 + 150);
+            Name.position(width / 2 - 50, height / 2 + 50);
 
             Easy.mouseClicked(this.startEasy);
             Hard.mouseClicked(this.startHard);
