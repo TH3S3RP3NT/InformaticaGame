@@ -34,13 +34,13 @@ function keyPressed() {
     if (keyCode === ENTER) {
         muziek[currentTrackIndex].play();
     }
+    mgr.handleEvent("keyPressed");
 }
 
 function playNextTrack() {
     if (muziek[currentTrackIndex]) {
         muziek[currentTrackIndex].stop();
     }
-
 
     currentTrackIndex++;
 
