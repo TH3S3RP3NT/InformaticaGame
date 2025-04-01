@@ -2,6 +2,7 @@ let mgr;
 let muziek = [];
 let currentTrackIndex = 0;
 let musicData;
+let isMusicPlaying = false;
 
 function preload() {
     musicData = loadJSON("/InformaticaGame/public/assets/json/music.json", () => {
@@ -16,25 +17,17 @@ function preload() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     mgr = new SceneManager();
-    mgr.wire()
+    mgr.wire();
     mgr.showScene(Titlescreen);
-    muziek[currentTrackIndex].play();
-    muziek[currentTrackIndex].onended(playNextTrack);
+    playMusic();
 }
 
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}
-
-function draw() {
-    mgr.draw();
-}
-
-function keyPressed() {
-    if (keyCode === ENTER) {
+function playMusic() {
+    if (!isMusicPlaying) {
         muziek[currentTrackIndex].play();
+        isMusicPlaying = true;
+        muziek[currentTrackIndex].onended(playNextTrack);
     }
-    mgr.handleEvent("keyPressed");
 }
 
 function playNextTrack() {
@@ -49,4 +42,19 @@ function playNextTrack() {
     }
 
     muziek[currentTrackIndex].play();
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+    mgr.draw();
+}
+
+function keyPressed() {
+    if (keyCode === ENTER) {
+        playMusic();
+    }
+    mgr.handleEvent("keyPressed");
 }
