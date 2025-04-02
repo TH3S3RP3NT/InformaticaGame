@@ -19,7 +19,7 @@ function Titlescreen() {
             text("Welkom bij Stickman Fight!", width / 2, height / 2);
             text("Druk op ENTER om te beginnen", width / 2, height / 2 + 50);
         } else {
-            text("Voer je naam in:", width / 2, height / 2 + 100);
+            text("Voer je naam in:", width / 2, height / 2);
             Name.show();
             Opslaan.show();
         }
@@ -31,10 +31,10 @@ function Titlescreen() {
 
 
             Name = createInput();
-            Name.position(width / 2, height / 2);
+            Name.position(width / 2, height / 2 + 25);
 
             Opslaan = createButton('Opslaan');
-            Opslaan.position(width / 2, height / 2 + 25);
+            Opslaan.position(width / 2, height / 2 + 50);
 
             Easy = createButton('Easy');
             Easy.hide();
