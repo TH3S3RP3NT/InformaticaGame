@@ -23,11 +23,14 @@ function setup() {
 }
 
 function playMusic() {
-    if (!isMusicPlaying) {
-        muziek[currentTrackIndex].play();
-        isMusicPlaying = true;
-        muziek[currentTrackIndex].onended(playNextTrack);
+    setTimeout(1000).then(() => {
+        if (!isMusicPlaying) {
+            muziek[currentTrackIndex].play();
+            isMusicPlaying = true;
+            muziek[currentTrackIndex].onended(playNextTrack);
+        }
     }
+    );
 }
 
 function playNextTrack() {
