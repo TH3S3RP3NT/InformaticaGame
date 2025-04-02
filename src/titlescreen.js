@@ -1,5 +1,6 @@
 function Titlescreen() {
     this.gameStarted = false;
+    this.nameSaved = false;
     let Name;
     let Easy;
     let Hard;
@@ -22,6 +23,11 @@ function Titlescreen() {
             text("Voer je naam in:", width / 2, height / 2);
             Name.show();
             Opslaan.show();
+
+            if (this.nameSaved) {
+                let name = Name.value(); // Get the name again
+                text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
+            }
         }
     }
 
@@ -57,10 +63,11 @@ function Titlescreen() {
             storeItem('name', name);
             Name.hide();
             Opslaan.hide();
+            this.nameSaved = true; // Set the flag to true
+
+            Easy.show();
+            Hard.show();
         }
-        Easy.show();
-        Hard.show();
-        text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
     }
 
     this.startEasy = function () {
