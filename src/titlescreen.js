@@ -26,7 +26,7 @@ function Titlescreen() {
             Opslaan.show();
 
             if (this.nameSaved) {
-                let name = Name.value(); // Get the name again
+                let name = getItem('name');
                 text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
             }
         }
