@@ -31,13 +31,13 @@ function Titlescreen() {
 
 
             Name = createInput();
-            Name.position(width / 2, height / 2 + 50);
+            Name.position(width / 2, height / 2 + 25);
 
             Easy = createButton('Easy');
-            Easy.position(width / 2 - 50, height / 2 + 25);
+            Easy.position(width / 2 - 50, height / 2);
 
             Hard = createButton('Hard');
-            Hard.position(width / 2 + 50, height / 2 + 25);
+            Hard.position(width / 2 + 50, height / 2);
 
 
             Easy.mouseClicked(this.startEasy.bind(this));
