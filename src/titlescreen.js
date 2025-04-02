@@ -31,7 +31,7 @@ function Titlescreen() {
 
 
             Name = createInput();
-            Name.position(width / 2, height / 2 + 25);
+            Name.position(width / 2 - 50, height / 2 + 25);
 
             Opslaan = createButton('Opslaan');
             Opslaan.position(width / 2, height / 2 + 50);
@@ -54,7 +54,7 @@ function Titlescreen() {
     this.saveName = function () {
         let name = Name.value();
         if (name) {
-            setItem('name', name);
+            storeItem('name', name);
             Name.hide();
             Opslaan.hide();
         }

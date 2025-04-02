@@ -53,12 +53,17 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode === ENTER) {
-        playMusic();
-    }
     mgr.handleEvent("keyPressed");
 }
 
 function mousePressed() {
     mgr.handleEvent("mousePressed");
+}
+
+function mouseReleased() {
+    mgr.handleEvent("mouseReleased");
+}
+function mouseMoved() {
+    mgr.handleEvent("mouseMoved");
+    playMusic();
 }
