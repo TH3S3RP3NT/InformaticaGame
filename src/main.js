@@ -23,15 +23,13 @@ function setup() {
 }
 
 function playMusic() {
-    setTimeout(1000).then(() => {
         if (!isMusicPlaying) {
             muziek[currentTrackIndex].play();
             isMusicPlaying = true;
             muziek[currentTrackIndex].onended(playNextTrack);
         }
-    }
-    );
 }
+
 
 function playNextTrack() {
     if (muziek[currentTrackIndex]) {
