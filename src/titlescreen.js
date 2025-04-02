@@ -37,18 +37,18 @@ function Titlescreen() {
 
 
             Name = createInput();
-            Name.position(width / 2 - 50, height / 2 + 25);
+            Name.position(width / 2 - 50, height / 2 + 30);
 
             Opslaan = createButton('Opslaan');
-            Opslaan.position(width / 2, height / 2 + 50);
+            Opslaan.position(width / 2, height / 2 + 60);
 
             Easy = createButton('Easy');
             Easy.hide();
-            Easy.position(width / 2 - 50, height / 2);
+            Easy.position(width / 2 - 50, height / 2 + 100);
 
             Hard = createButton('Hard');
             Hard.hide();
-            Hard.position(width / 2 + 50, height / 2);
+            Hard.position(width / 2 + 50, height / 2 + 100);
 
 
             Easy.mouseClicked(this.startEasy.bind(this));
