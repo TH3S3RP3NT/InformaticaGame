@@ -5,13 +5,13 @@ function Titlescreen() {
     let Hard;
     let Opslaan;
 
-    this.setup = function() {
+    this.setup = function () {
         textFont(font);
         textSize(40);
         textAlign(CENTER, CENTER);
     }
 
-    this.draw = function() {
+    this.draw = function () {
         background(achtergrond);
         fill(0);
 
@@ -25,7 +25,7 @@ function Titlescreen() {
         }
     }
 
-    this.keyPressed = function() {
+    this.keyPressed = function () {
         if (keyCode === ENTER && !this.gameStarted) {
             this.gameStarted = true;
 
@@ -47,28 +47,28 @@ function Titlescreen() {
 
             Easy.mouseClicked(this.startEasy.bind(this));
             Hard.mouseClicked(this.startHard.bind(this));
-            Opslaan.mouseClicked(
-                function() {
-                    let name = Name.value();
-                    if (name) {
-                        setItem('name', name);
-                        Name.hide();
-                        Opslaan.hide();
-                    }
-                    Easy.show();
-                    Hard.show();
-                    text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
-                }.bind(this)
-            )
+            Opslaan.mouseClicked(this.saveName.bind(this));
         }
     }
 
-    this.startEasy = function() {
+    this.saveName = function () {
+        let name = Name.value();
+        if (name) {
+            setItem('name', name);
+            Name.hide();
+            Opslaan.hide();
+        }
+        Easy.show();
+        Hard.show();
+        text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
+    }
+
+    this.startEasy = function () {
         Easy.hide();
         Hard.hide();
         this.sceneManager.showScene(EasyLevel1);
     }
-    this.startHard = function() {
+    this.startHard = function () {
         Easy.hide();
         Hard.hide();
         this.sceneManager.showScene(HardLevel1);
