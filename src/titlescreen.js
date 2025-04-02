@@ -21,8 +21,7 @@ function Titlescreen() {
         } else {
             text("Voer je naam in:", width / 2, height / 2 + 100);
             Name.show();
-            Easy.show();
-            Hard.show();
+            Opslaan.show();
         }
     }
 
@@ -35,12 +34,14 @@ function Titlescreen() {
             Name.position(width / 2, height / 2);
 
             Opslaan = createButton('Opslaan');
-            Opslaan.position(width / 2, height / 2 - 25);
+            Opslaan.position(width / 2, height / 2 + 25);
 
             Easy = createButton('Easy');
+            Easy.hide();
             Easy.position(width / 2 - 50, height / 2);
 
             Hard = createButton('Hard');
+            Hard.hide();
             Hard.position(width / 2 + 50, height / 2);
 
 
@@ -54,6 +55,9 @@ function Titlescreen() {
                         Name.hide();
                         Opslaan.hide();
                     }
+                    Easy.show();
+                    Hard.show();
+                    text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
                 }.bind(this)
             )
         }
