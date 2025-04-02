@@ -1,12 +1,14 @@
 function EasyLevel1() {
+    let bg;
     this.setup = function() {
         textFont(font);
         textSize(40);
         textAlign(CENTER, CENTER);
+        bg = loadImage('naam.bestand');
     }
 
     this.draw = function() {
-        background(achtergrond);
+        background(bg);
         fill(0);
         text("Easy Level 1", width / 2, height / 2);
         text("Druk op ENTER om te beginnen", width / 2, height / 2 + 50);

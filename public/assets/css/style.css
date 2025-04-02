@@ -17,11 +17,3 @@ body {
     overflow: hidden;
 }
 
-button {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #23242a;
-}

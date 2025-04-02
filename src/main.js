@@ -2,7 +2,7 @@ let mgr;
 let muziek = [];
 let currentTrackIndex = 0;
 let musicData;
-let isMusicPlaying = false; // Track if music is playing
+let isMusicPlaying = false;
 
 function preload() {
     musicData = loadJSON("/InformaticaGame/public/assets/json/music.json", () => {
@@ -19,13 +19,29 @@ function setup() {
     mgr = new SceneManager();
     mgr.wire();
     mgr.showScene(Titlescreen);
+    playMusic();
+}
 
-    // Start playing the music if it's not already playing
+function playMusic() {
     if (!isMusicPlaying) {
         muziek[currentTrackIndex].play();
+        isMusicPlaying = true;
         muziek[currentTrackIndex].onended(playNextTrack);
-        isMusicPlaying = true; // Set the flag to true
     }
+}
+
+function playNextTrack() {
+    if (muziek[currentTrackIndex]) {
+        muziek[currentTrackIndex].stop();
+    }
+
+    currentTrackIndex++;
+
+    if (currentTrackIndex >= muziek.length) {
+        currentTrackIndex = 0;
+    }
+
+    muziek[currentTrackIndex].play();
 }
 
 function windowResized() {
@@ -38,24 +54,11 @@ function draw() {
 
 function keyPressed() {
     if (keyCode === ENTER) {
-        if (muziek[currentTrackIndex].isPlaying()) {
-            muziek[currentTrackIndex].pause(); // Pause if currently playing
-        } else {
-            muziek[currentTrackIndex].play(); // Play if paused
-        }
+        playMusic();
     }
+    mgr.handleEvent("keyPressed");
 }
 
-function playNextTrack() {
-    if (muziek[currentTrackIndex]) {
-        muziek[currentTrackIndex].stop(); // Stop the current track
-    }
-
-    currentTrackIndex++; // Move to the next track
-
-    if (currentTrackIndex >= muziek.length) {
-        currentTrackIndex = 0; // Loop back to the start
-    }
-
-    muziek[currentTrackIndex].play(); // Play the next track
+function mousePressed() {
+    mgr.handleEvent("mousePressed");
 }
