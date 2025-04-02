@@ -1,6 +1,7 @@
 function EasyLevel1() {
     let bg;
     this.setup = function() {
+        clear();
         textFont(font);
         textSize(40);
         textAlign(CENTER, CENTER);

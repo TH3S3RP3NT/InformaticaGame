@@ -7,6 +7,7 @@ function Titlescreen() {
     let Opslaan;
 
     this.setup = function () {
+        clear();
         textFont(font);
         textSize(40);
         textAlign(CENTER, CENTER);
