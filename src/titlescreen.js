@@ -3,6 +3,7 @@ function Titlescreen() {
     let Name;
     let Easy;
     let Hard;
+    let Opslaan;
 
     this.setup = function() {
         textFont(font);
@@ -31,7 +32,10 @@ function Titlescreen() {
 
 
             Name = createInput();
-            Name.position(width / 2, height / 2 + 25);
+            Name.position(width / 2, height / 2);
+
+            Opslaan = createButton('Opslaan');
+            Opslaan.position(width / 2, height / 2 - 25);
 
             Easy = createButton('Easy');
             Easy.position(width / 2 - 50, height / 2);
@@ -42,13 +46,27 @@ function Titlescreen() {
 
             Easy.mouseClicked(this.startEasy.bind(this));
             Hard.mouseClicked(this.startHard.bind(this));
+            Opslaan.mouseClicked(
+                function() {
+                    let name = Name.value();
+                    if (name) {
+                        setItem('name', name);
+                        Name.hide();
+                        Opslaan.hide();
+                    }
+                }.bind(this)
+            )
         }
     }
 
     this.startEasy = function() {
+        Easy.hide();
+        Hard.hide();
         this.sceneManager.showScene(EasyLevel1);
     }
     this.startHard = function() {
+        Easy.hide();
+        Hard.hide();
         this.sceneManager.showScene(HardLevel1);
     }
 }
