@@ -1,5 +1,8 @@
 function Titlescreen() {
     this.gameStarted = false;
+    let Name;
+    let Easy;
+    let Hard;
 
     this.setup = function() {
         textFont(font);
@@ -23,19 +26,22 @@ function Titlescreen() {
     }
 
     this.keyPressed = function() {
-        if (keyCode === ENTER) {
-            this.gameStarted = true; // Update the state to indicate the game has started
-            text("Voer je naam in:", width / 2, height / 2 + 100);
-            let Name = createInput();
-            storeItem('name', Name.value());
-            let Easy = createButton('Easy');
-            let Hard = createButton('Hard');
-            Easy.position(width / 2 - 50, height / 2 + 150);
-            Hard.position(width / 2 + 50, height / 2 + 150);
+        if (keyCode === ENTER && !this.gameStarted) {
+            this.gameStarted = true;
+
+
+            Name = createInput();
             Name.position(width / 2 - 50, height / 2 + 50);
 
-            Easy.mouseClicked(this.startEasy);
-            Hard.mouseClicked(this.startHard);
+            Easy = createButton('Easy');
+            Easy.position(width / 2 - 50, height / 2 + 150);
+
+            Hard = createButton('Hard');
+            Hard.position(width / 2 + 50, height / 2 + 150);
+
+
+            Easy.mouseClicked(this.startEasy.bind(this));
+            Hard.mouseClicked(this.startHard.bind(this));
         }
     }
 

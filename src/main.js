@@ -58,3 +58,7 @@ function keyPressed() {
     }
     mgr.handleEvent("keyPressed");
 }
+
+function mousePressed() {
+    mgr.handleEvent("mousePressed");
+}
