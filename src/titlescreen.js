@@ -26,6 +26,8 @@ function Titlescreen() {
             Opslaan.show();
 
             if (this.nameSaved) {
+                Name.hide();
+                Opslaan.hide();
                 let name = getItem('name');
                 text(`Hallo ${name}, kies je moeilijkheidsgraad:`, width / 2, height / 2 + 50);
             }
@@ -62,9 +64,7 @@ function Titlescreen() {
         let name = Name.value();
         if (name) {
             storeItem('name', name);
-            Name.hide();
-            Opslaan.hide();
-            this.nameSaved = true; // Set the flag to true
+            this.nameSaved = true;
 
             Easy.show();
             Hard.show();
