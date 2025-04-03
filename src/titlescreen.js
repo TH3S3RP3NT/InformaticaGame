@@ -43,7 +43,7 @@ function Titlescreen() {
             Name.position(width / 2 - 50, height / 2 + 30);
 
             Opslaan = createButton('Opslaan');
-            Opslaan.position(width / 2, height / 2 + 60);
+            Opslaan.position(width / 2, height / 2 + 70);
 
             Easy = createButton('Easy');
             Easy.hide();
