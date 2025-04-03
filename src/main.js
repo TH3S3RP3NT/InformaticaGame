@@ -19,30 +19,34 @@ function setup() {
     mgr = new SceneManager();
     mgr.wire();
     mgr.showScene(Titlescreen);
-    playMusic();
 }
 
 function playMusic() {
-        if (!isMusicPlaying) {
-            muziek[currentTrackIndex].play();
-            isMusicPlaying = true;
-            muziek[currentTrackIndex].onended(playNextTrack);
-        }
+    if (!isMusicPlaying) {
+        muziek[currentTrackIndex].play();
+        isMusicPlaying = true;
+        muziek[currentTrackIndex].onended(playNextTrack);
+    }
 }
 
 
 function playNextTrack() {
-    if (muziek[currentTrackIndex]) {
+    // Stop the current track only if it's playing
+    if (muziek[currentTrackIndex] && muziek[currentTrackIndex].isPlaying()) {
         muziek[currentTrackIndex].stop();
     }
 
+    // Move to the next track
     currentTrackIndex++;
 
+    // Loop back to the first track if we've reached the end
     if (currentTrackIndex >= muziek.length) {
         currentTrackIndex = 0;
     }
 
+    // Play the next track
     muziek[currentTrackIndex].play();
+    muziek[currentTrackIndex].onended(playNextTrack); // Set the onended callback for the new track
 }
 
 function windowResized() {
@@ -59,6 +63,7 @@ function keyPressed() {
 
 function mousePressed() {
     mgr.handleEvent("mousePressed");
+    playMusic();
 }
 
 function mouseReleased() {
@@ -66,5 +71,4 @@ function mouseReleased() {
 }
 function mouseMoved() {
     mgr.handleEvent("mouseMoved");
-    playMusic();
 }
