@@ -3,42 +3,75 @@ class Stickman {
         this.x = x;
         this.y = y;
         this.color = color;
-        this.width = 250; // Example width
-        this.height = 300; // Example height
-        this.isMoving = false; // Track if the Stickman is moving
+        this.width = 250;
+        this.height = 300;
+        this.isMoving = false;
+        this.isFighting = false;
+        this.attackFrame = 0;
+        this.attackSpeed = 0.25;
+        this.attackFrameCount = 0;
         this.upKey = upKey;
         this.leftKey = leftKey;
         this.downKey = downKey;
         this.rightKey = rightKey;
-        this.currentTexture = stickmanStanding; // Start with standing texture
+        this.currentTexture = stickmanStanding;
+        this.health = 100;
     }
 
     update() {
-        // Check for movement
-        this.isMoving = false; // Reset moving state
+        this.isMoving = false;
+
+
+        if (this.isFighting) {
+            this.attackFrameCount++;
+
+            if (this.attackFrameCount >= 1/this.attackSpeed) {
+                this.attackFrame++;
+                this.attackFrameCount = 0;
+            }
+
+
+            if (this.attackFrame >= stickmanFighting.numFrames()) {
+                this.isFighting = false;
+                this.attackFrame = 0;
+            }
+        }
+
 
         if (keyIsDown(this.upKey)) {
-            this.y -= 5; // Move up
+            this.y -= 5;
             this.isMoving = true;
         }
         if (keyIsDown(this.downKey)) {
-            this.y += 5; // Move down
+            this.y += 5;
             this.isMoving = true;
         }
         if (keyIsDown(this.leftKey)) {
-            this.x -= 5; // Move left
+            this.x -= 5;
             this.isMoving = true;
         }
         if (keyIsDown(this.rightKey)) {
-            this.x += 5; // Move right
+            this.x += 5;
             this.isMoving = true;
         }
 
-        // Update the current texture based on movement state
-        if (this.isMoving) {
-            this.currentTexture = stickmanWalking; // Change to walking texture
+
+        if (this.isFighting) {
+            stickmanFighting.setFrame(this.attackFrame);
+            this.currentTexture = stickmanFighting;
+        } else if (this.isMoving) {
+            this.currentTexture = stickmanWalking;
         } else {
-            this.currentTexture = stickmanStanding;// Change to standing texture
+            this.currentTexture = stickmanStanding;
+        }
+    }
+
+    startFighting() {
+        if (!this.isFighting) {
+            this.isFighting = true;
+            this.attackFrame = 0;
+            this.attackFrameCount = 0;
+            stickmanFighting.reset();
         }
     }
 

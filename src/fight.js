@@ -62,14 +62,17 @@ function EasyLevel1() {
                 if (keyCode === 70 && player1CanAttack) {
                     player2.health -= 5;
                     player1CanAttack = false;
+                    player1.startFighting();
+                    setTimeout(() => player1CanAttack = true, 500);
                 }
                 if (keyCode === 76 && player2CanAttack) {
                     player1.health -= 5;
                     player2CanAttack = false;
+                    player2.startFighting();
+                    setTimeout(() => player2CanAttack = true, 500);
                 }
             }
         }
-
 
         if (player1.health <= 0) {
             this.sceneManager.showScene(LoseScreen);
@@ -82,9 +85,11 @@ function EasyLevel1() {
     this.keyReleased = function() {
         if (keyCode === 70) {
             player1CanAttack = true;
+            player1.isFighting = false;
         }
         if (keyCode === 76) {
             player2CanAttack = true;
+            player2.isFighting = false;
         }
     }
 }

@@ -3,6 +3,7 @@ let muziek = [];
 let musicData;
 let stickmanStanding;
 let stickmanWalking;
+let stickmanFighting;
 
 function preload() {
     musicData = loadJSON("/InformaticaGame/public/assets/json/music.json", () => {
@@ -14,6 +15,7 @@ function preload() {
     font = loadFont('/InformaticaGame/public/assets/fonts/Marianne.otf');
     stickmanStanding = loadImage('/InformaticaGame/public/assets/img/stickman_standing.png');
     stickmanWalking = loadImage('/InformaticaGame/public/assets/img/stickman_walking.gif');
+    stickmanFighting = loadImage('/InformaticaGame/public/assets/img/stickman_fighting.gif');
 }
 
 function setup() {
