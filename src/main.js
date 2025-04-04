@@ -1,8 +1,8 @@
 let mgr;
 let muziek = [];
-let currentTrackIndex = 0;
 let musicData;
-let isMusicPlaying = false;
+let stickmanStanding;
+let stickmanWalking;
 
 function preload() {
     musicData = loadJSON("/InformaticaGame/public/assets/json/music.json", () => {
@@ -12,6 +12,8 @@ function preload() {
     });
     achtergrond = loadImage("/InformaticaGame/public/assets/img/basicarenabackground.jpg");
     font = loadFont('/InformaticaGame/public/assets/fonts/Marianne.otf');
+    stickmanStanding = loadImage('/InformaticaGame/public/assets/img/stickman_standing.png');
+    stickmanWalking = loadImage('/InformaticaGame/public/assets/img/stickman_walking.gif');
 }
 
 function setup() {
@@ -21,31 +23,7 @@ function setup() {
     mgr.showScene(Titlescreen);
 }
 
-function playMusic() {
-    if (!isMusicPlaying) {
-        muziek[currentTrackIndex].play();
-        isMusicPlaying = true;
-        muziek[currentTrackIndex].onended(playNextTrack);
-    }
-}
 
-
-function playNextTrack() {
-    if (muziek[currentTrackIndex] && muziek[currentTrackIndex].isPlaying()) {
-        muziek[currentTrackIndex].stop();
-    }
-
-    currentTrackIndex++;
-
-
-    if (currentTrackIndex >= muziek.length) {
-        currentTrackIndex = 0;
-    }
-
-
-    muziek[currentTrackIndex].play();
-    muziek[currentTrackIndex].onended(playNextTrack);
-}
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
@@ -61,7 +39,6 @@ function keyPressed() {
 
 function mousePressed() {
     mgr.handleEvent("mousePressed");
-    playMusic();
 }
 
 function mouseReleased() {
